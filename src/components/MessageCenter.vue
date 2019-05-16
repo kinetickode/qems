@@ -54,10 +54,11 @@ export default {
     border: 1px solid #999999;
     border-radius: 10px;
     color: white;
-    width: 380px;
+    width: 580px;
     height: 500px;
     z-index: 99;
     padding: 15px;
+
 }
 .hidden {
     display: none;

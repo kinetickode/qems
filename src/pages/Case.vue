@@ -175,7 +175,6 @@ export default {
     margin: 2px 10px;
     padding: 0 10px;
     height: 35px;
-    width: 100%;
 }
   .emsrow1 a {
     color: red !important;

@@ -9,7 +9,7 @@
           v-for="item in complaints"
           v-bind:key="item.id"
           class="complaint"
-          @click="setStemi()"
+          @click="setStemi(item)"
           v-bind:class="level(item)">
           {{item.name}}
         </div>
@@ -24,13 +24,15 @@
 
     </div>
 
-    <div v-bind:class="{ hidden: !isStemi }">
+    <div v-if="isStemi">
 
-          <img
-            @click="setStemi()"
-            src="~assets/emsstemibar.png"
-            alt="Twiage EMS App"
-            width="290"/>
+          <div class="tagHeader" @click="setStemi({ name: '', level: 0 })">
+            <div class="tagLabel">
+              <b>{{ selectedItem.name }}</b>
+              <span class="tagPriority">Priority {{ selectedItem.level }}</span>
+            </div>
+            <div class="tagLevel" v-bind:class="level(selectedItem)"></div>
+          </div>
 
           <div class="emsdiv22">
             <div class="complaints">
@@ -80,6 +82,7 @@ export default {
   data: () => ({
     start: true,
     stemi: false,
+    selectedItem: { name: '', level: 0 },
     complaints: [
       {
         id: 1,
@@ -257,9 +260,10 @@ export default {
     },
   },
   methods: {
-    setStemi() {
+    setStemi(item) {
       // this.$router.push('condition');
       this.stemi = !this.stemi;
+      this.selectedItem = item;
     },
     level(item) {
       if (item.level === 1) {
@@ -278,6 +282,28 @@ export default {
 </script>
 
 <style>
+.tagHeader {
+  width: 350px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid black;
+}
+.tagLabel {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin-left: 5px;
+  color: white;
+}
+.tagPriority {
+  font-size: 75%;
+}
+.tagLevel {
+  width: 30px;
+  height: 30px;
+}
 .hidden {
     display: none;
 }
