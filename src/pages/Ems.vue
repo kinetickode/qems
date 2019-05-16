@@ -84,6 +84,7 @@ export default {
 <style>
 .page {
   background-color: #222222;
+  width: 100%;
 }
 .centerdiv {
     position: relative;
