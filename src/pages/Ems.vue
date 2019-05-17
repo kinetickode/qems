@@ -6,6 +6,7 @@
       <div class="headerline">
         <router-link to="/settings" class="singlelink">Settings</router-link>
         <span>Twiage EMS</span>
+        <router-link to="/messages" class="singlelink">Messages</router-link>
       </div>
 
       <div class="emsrow">
@@ -32,21 +33,18 @@
         <img
           src="~assets/emsbadge.png"
           alt="Twiage EMS App"
-          style="margin-left: 20px;"
           width="280"/>
 
         <router-link to="/case" class="singlelink">
-          <button
-            class="startcase">
+          <button class="startcase">
               START CASE
           </button>
         </router-link>
 
         <router-link to="/transfer" class="singlelink">
-          <button
-            class="startcase"
+          <button class="startcase"
             to="/transfer">
-            START TRANSFER
+            TRANSFERS
           </button>
         </router-link>
 
@@ -195,7 +193,7 @@ export default {
     font-weight: 500;
     cursor: pointer;
     margin-bottom: 10px;
-    margin-left: 30px;
+    margin-left: 10px;
 }
 .gender {
     display: flex;

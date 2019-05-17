@@ -52,6 +52,11 @@
       </div>
 
     </div>
+
+    <div class="emsrow">
+      <router-link to="/ems" class="singlelink">Back</router-link>
+    </div>
+
   </q-page>
 </template>
 
